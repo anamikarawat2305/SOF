@@ -46,6 +46,7 @@ const Navbar = () => {
               borderRadius="50%"
               color="white"
             >
+
               <Link
                 to={`/Users/${User?.result?._id}`}
                 style={{ color: "white", textDecoration: "none" }}
@@ -56,6 +57,8 @@ const Navbar = () => {
             <Avatar px="10px" py="7px"></Avatar>
             <button className="nav-item nav-links">Log out</button>
           </>
+
+          
         )}
       </div>
     </nav>
