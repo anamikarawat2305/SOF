@@ -1,10 +1,20 @@
+import { BrowserRouter as Router } from "react-router-dom";
 
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import AllRoutes from "./AllRoutes";
 
 function App() {
   return (
     <div className="App">
-      <h1>Stack OverFlow Clone</h1>
+
+      <Router>
+
+        <Navbar />
+        <AllRoutes />
+        
+      </Router>
+
     </div>
   );
 }
