@@ -1,18 +1,19 @@
-nav {
+.main-nav {
   min-height: 50px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0% auto;
   border-top: solid 3px #ef8236;
   box-shadow: 0px 1px 5px #00000033;
   position: fixed;
   z-index: 5;
   top: 0%;
   left: 0%;
-  background-color: #f8f9f9;
+  background-color: #F8F9F9;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .navbar {
   height: 100%;
   min-width: 85%;
@@ -33,11 +34,13 @@ nav {
   color: rgb(69, 69, 69);
   transition: 0.2s;
 }
+
 .nav-btn {
   cursor: pointer;
   border-radius: 20px;
   padding: 10px 20px;
 }
+
 .nav-item:hover {
   background-color: rgb(226, 226, 226);
 }
@@ -47,6 +50,7 @@ nav {
   padding: 0px 12px;
   position: relative;
 }
+
 .navbar form input {
   min-width: 90%;
   margin: 0;
@@ -55,11 +59,22 @@ nav {
   border: solid 1px #0000003e;
   border-radius: 3px;
 }
+
 .navbar form .search-icon {
   position: absolute;
   left: 25px;
   top: 8px;
 }
+
+.nav-active {
+  background-color: #F48428;
+  color: black;
+}
+
+.nav-active:hover {
+  background-color: #f8c073;
+}
+
 .nav-links {
   padding: 7px 13px;
   border: solid 1px blue;
@@ -68,7 +83,11 @@ nav {
   cursor: pointer;
 }
 
-.nav-links :hover {
+.nav-links:hover {
   background-color: #d3e4eb;
 }
 
+.nav-links:focus {
+  background-color: #009CFD;
+  color: white;
+}
