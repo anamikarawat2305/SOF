@@ -2,8 +2,9 @@ import React from 'react'
 
 import {Link , useLocation} from 'react-router-dom'
 
-//use backend
-// import { useLocation, useNavigate } from 'react-router-dom'
+
+import { useLocation, useNavigate } from 'react-router-dom'
+
 // import { useSelector } from 'react-redux'
 
 //link css ans queslist
@@ -12,12 +13,13 @@ import QuestionList from './QuestionList'
 
 const HomeMainbar = () => {
 
-    // const location = useLocation()
-    // const user = 1;
-    // const navigate = useNavigate()
+    const location = useLocation()
+    const user = 1;
+    const navigate = useNavigate()
 
     // const questionsList = useSelector(state => state.questionsReducer)
 
+    
     ////  questionsList is array of objects as id, upvotes,etc
 
     console.log(questionsList)
@@ -74,14 +76,16 @@ const HomeMainbar = () => {
         }]
     }]
 
-    // const checkAuth = () => {
-    //     if (user === null) {
-    //         alert("login or signup to ask a question")
-    //         navigate('/Auth')
-    //     } else {
-    //         navigate('/AskQuestion')
-    //     }
-    // }
+
+    ////check authentication alert login
+    const checkAuth = () => {
+        if (user === null) {
+            alert("login or signup to ask a question")
+            navigate('/Auth')
+        } else {
+            navigate('/AskQuestion')
+        }
+    }
 
     return (
         <div className='main-bar'>
