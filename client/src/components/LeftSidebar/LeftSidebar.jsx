@@ -18,6 +18,7 @@ const LeftSidebar = () => {
                 <div className='side-nav-div'>
                     <div><p>PUBLIC</p></div>
 
+
                     <NavLink to='/Questions' className='side-nav-links' activeclassname='active'>
                         <img src={Globe} alt="Globe" />   
                         {/* image import from globe */}
