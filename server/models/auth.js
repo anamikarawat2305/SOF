@@ -6,8 +6,8 @@ const userSchema = mongoose.Schema({
     email: {type: String, required: true},
     password: {type: String, required: true},
     about: {type: String },
-    tags: {type: [String] },
-    joinedOn: {type: Date, default: Date.now }
+    tags: {type: [String] }, //array of strings because tags are many
+    joinedOn: {type: Date, default: Date.now } //database will autofill the date when user login
 })
-
+//model name- User & schema-userSchema
 export default mongoose.model("User", userSchema)

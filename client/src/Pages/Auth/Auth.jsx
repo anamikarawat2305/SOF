@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+//useDispatch function from react-redux connect actions folder->auth.js
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -35,6 +36,8 @@ const Auth = () => {
             if (!name) {
                 alert("Enter a name to continue")
             }
+//we use dispatch for signup & login function from react-redux from actions folder->auth.js
+//so that reducers recevie a particular data
             dispatch(signup({ name, email, password }, navigate))
         } else {
             dispatch(login({ email, password }, navigate))

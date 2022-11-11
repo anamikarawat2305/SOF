@@ -4,9 +4,10 @@ import bcrypt from 'bcryptjs'
 import users from '../models/auth.js'
 
 export const signup = async (req, res) => {
-    //console.log('User already exist')
+    
     const { name, email, password } = req.body;
     try {
+        //if the user-email is already present in th database then it will show->User already Exist
         const existinguser = await users.findOne({ email });
         if (existinguser) {
             return res.status(404).json({ message: "User already Exist." })
@@ -14,6 +15,7 @@ export const signup = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 12)
         const newUser = await users.create({ name, email, password: hashedPassword })
+        
         const token = jwt.sign({ email: newUser.email, id: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.status(200).json({ result: newUser, token })
     } catch (error) {

@@ -4,6 +4,7 @@ import { login, signup } from '../controllers/auth.js'
 import { getAllUsers, updateProfile } from '../controllers/users.js'
 import auth from '../middleware/auth.js'
 
+
 const router = express.Router();
 
 //post request ->signup/login , callback function
