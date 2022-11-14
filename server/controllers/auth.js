@@ -9,7 +9,7 @@ export const signup = async (req, res) => {
     try {
         //if the user-email is already present in th database then it will show->User already Exist
         const existinguser = await users.findOne({ email });
-        if (existinguser) {
+        if (existinguser) { //existing user
             return res.status(404).json({ message: "User already Exist." })
         }
 
@@ -27,12 +27,12 @@ export const login = async (req, res) => {
     const { email, password } = req.body;
     try {
         const existinguser = await users.findOne({ email });
-        if (!existinguser) {
+        if (!existinguser) {  //user not exist
             return res.status(404).json({ message: "User don't Exist." })
         }
 
         const isPasswordCrt = await bcrypt.compare(password, existinguser.password)
-        if (!isPasswordCrt) {
+        if (!isPasswordCrt) { //password not correct
             return res.status(400).json({ message: "Invalid credentials" })
         }
         const token = jwt.sign({ email: existinguser.email, id: existinguser._id }, process.env.JWT_SECRET, { expiresIn: '1h' });

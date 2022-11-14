@@ -1,9 +1,9 @@
 import express from 'express'
-import mongoose from 'mongoose'
+import mongoose from 'mongoose'  //creating database for doing crude operations
 import cors from 'cors'
 import dotenv from 'dotenv'
 
-// in node.js we write users.js
+// in node.js we write users.js but in react we write users 
 import userRoutes from './routes/users.js'
 import questionRoutes from './routes/Questions.js'
 import answerRoutes from './routes/Answers.js'
@@ -14,7 +14,7 @@ const app = express(); // express server
 dotenv.config();
 
 //these are the middleware
-app.use(express.json({ limit: "30mb", extended: true }))
+app.use(express.json({ limit: "30mb", extended: true }))//our backend is rest api
 app.use(express.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors());
 

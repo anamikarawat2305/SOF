@@ -8,9 +8,9 @@ export const signup = (authData, navigate) => async (dispatch) => {
     try {
         //{data} from the backend
         const { data } = await api.signUp(authData)
-        dispatch({ type: 'AUTH', data })
+        dispatch({ type: 'AUTH', data }) //reducers auth.js
         dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
-        navigate('/')
+        navigate('/')  //navigate to home page
     } catch (error) {
         if (error == `${error_url}404`) alert("User already Exist.");
         else alert("Something went worng..\nTry Again!!");

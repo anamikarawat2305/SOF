@@ -7,7 +7,7 @@ import auth from '../middleware/auth.js'
 
 const router = express.Router();
 
-//post request ->signup/login , callback function
+//post request ->(signup/login , callback function)
 router.post('/signup', signup)
 router.post('/login', login)
 
